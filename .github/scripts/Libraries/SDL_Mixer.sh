@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 set +e
 
-# SDL_mixer
-BASEPATH="$(pwd)"
-
 if [[ ! -d "$BASEPATH/SDL_mixer" ]]; then
     git clone --recurse-submodules https://github.com/libsdl-org/SDL_mixer.git "$BASEPATH/SDL_mixer"
 fi
 
 # Environment
 INSTALLPATH="$BASEPATH/SDL_mixer/install_output"
-BUILDPATH="$BASEPATH/SDL_mixer/build_ouput"
+BUILDPATH="$BASEPATH/SDL_mixer/build_output"
 mkdir -p "$BUILDPATH"
 mkdir -p "$INSTALLPATH"
 cd "$BUILDPATH"

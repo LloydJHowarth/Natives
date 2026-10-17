@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 set +e
 
-# SDL_ttf
-BASEPATH="$(pwd)"
-
 if [[ ! -d "$BASEPATH/SDL_ttf" ]]; then
     git clone --recurse-submodules https://github.com/libsdl-org/SDL_image.git "$BASEPATH/SDL_ttf"
 fi
 
 # Environment
 INSTALLPATH="$BASEPATH/SDL_ttf/install_output"
-BUILDPATH="$BASEPATH/SDL_ttf/build_ouput"
+BUILDPATH="$BASEPATH/SDL_ttf/build_output"
 mkdir -p "$BUILDPATH"
 mkdir -p "$INSTALLPATH"
 cd "$BUILDPATH"

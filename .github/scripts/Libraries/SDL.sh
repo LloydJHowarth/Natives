@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 set +e
 
-# SDL
-BASEPATH="$(pwd)"
-
 if [[ ! -d "$BASEPATH/SDL" ]]; then
     git clone --recurse-submodules https://github.com/libsdl-org/SDL.git "$BASEPATH/SDL"
 fi
 
 # Environment
 INSTALLPATH="$BASEPATH/SDL/install_output"
-BUILDPATH="$BASEPATH/SDL/build_ouput"
+BUILDPATH="$BASEPATH/SDL/build_output"
 mkdir -p "$BUILDPATH"
 mkdir -p "$INSTALLPATH"
 cd "$BUILDPATH"
