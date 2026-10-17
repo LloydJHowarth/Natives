@@ -19,7 +19,7 @@ cp "$INSTALLPATH/lib/libSDL3_image.dylib" "$OUTPUTS"
 # SDL_mixer
 ARGS=( cmake .. -G "Ninja" -DBUILD_SHARED_LIBS=ON -DSDL3_DIR="$BASEPATH/SDL/install_output/lib/cmake/SDL3")
 source "$BASEPATH/.github/scripts/Libraries/SDL_mixer.sh"
-cp "$INSTALLPATH/lib/libSDL3_mixer.dll" "$OUTPUTS"
+cp "$INSTALLPATH/lib/libSDL3_mixer.dylib" "$OUTPUTS"
 
 # SDL_ttf
 ARGS=( cmake .. -G "Ninja" -DBUILD_SHARED_LIBS=ON -DSDL3_DIR="$BASEPATH/SDL/install_output/lib/cmake/SDL3")
