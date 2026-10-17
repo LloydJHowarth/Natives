@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set +e
+
+# SDL_image
+BASEPATH="$(pwd)"
+
+if [[ ! -d "$BASEPATH/SDL_image" ]]; then
+    git clone --recurse-submodules https://github.com/libsdl-org/SDL_image.git "$BASEPATH/SDL_image"
+fi
+
+# Environment
+INSTALLPATH="$BASEPATH/SDL_image/install_output"
+BUILDPATH="$BASEPATH/SDL_image/build_ouput"
+mkdir -p "$BUILDPATH"
+mkdir -p "$INSTALLPATH"
+cd "$BUILDPATH"
+
+# SDL_image
+"${ARGS[@]}" \
+  -DSDLMIXER_WAVE=ON \
+  -DSDLMIXER_MP3_DRMP3=ON \
+  -DSDLMIXER_VORBIS_STB=ON \
+  -DSDLMIXER_VORBIS_VORBISFILE=OFF \
+  -DSDLMIXER_VORBIS_TREMOR=OFF \
+  -DSDLMIXER_MIDI_TIMIDITY=OFF \
+  -DSDLMIXER_FLAC_LIBFLAC=OFF \
+  -DSDLMIXER_FLAC_DRFLAC=OFF \
+  -DSDLMIXER_MP3_MPG123=OFF \
+  -DSDLMIXER_GME_SHARED=OFF \
+  -DSDLMIXER_MOD_XMP=OFF \
+  -DSDLMIXER_WAVPACK=OFF \
+  -DSDLMIXER_AIFF=OFF \
+  -DSDLMIXER_OPUS=OFF \
+  -DSDLMIXER_VOC=OFF \
+  -DSDLMIXER_GME=OFF \
+  -DSDLMIXER_AU=OFF \
+  -DSDLMIXER_TESTS=OFF \
+  -DSDLMIXER_EXAMPLES=OFF \
+  -DSDLMIXER_VENDORED=ON \
+  -DSDLMIXER_DEPS_SHARED=OFF \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+  -DCMAKE_INSTALL_PREFIX="$INSTALLPATH"
+
+cmake --build . --config Release
+cmake --install . --config Release
+
+echo "Output files...."
+find "$INSTALLPATH"
