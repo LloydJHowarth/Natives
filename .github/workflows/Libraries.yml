@@ -19,7 +19,7 @@ jobs:
 #          - { name: linux-arm64, os: ubuntu-22.04-arm, cpu: aarch64, file: Linux.sh }
 #
           - { name: win-x64, os: windows-latest, cpu: x64, file: Windows.sh }
-          - { name: win-arm64, os: windows-11-vs2026-arm, cpu: arm64, file: Windows.sh }
+          - { name: win-arm64, os: windows-latest, cpu: arm64, file: Windows.sh }
 
 #          - { name: osx-arm64, os: macos-15, cpu: arm64, file: Mac.sh }
 #          - { name: osx-x64, os: macos-15-intel, cpu: x86_64, file: Mac.sh }

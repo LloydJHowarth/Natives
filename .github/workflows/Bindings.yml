@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: SDL, os: windows-2022, file: SDL.sh }
+          - { name: SDL, os: windows-latest, file: SDL.sh }
     
     steps:
       - name: Checkout
