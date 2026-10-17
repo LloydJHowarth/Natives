@@ -24,12 +24,12 @@ cd "$BUILDPATH"
 "${ARGS[@]}" \
   -DSDL_INSTALL=ON \
   -DSDL_TEST_LIBRARY=OFF \
-  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_BUILD_TYPE=MinSizeRel \
   -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
   -DCMAKE_INSTALL_PREFIX="$INSTALLPATH"
 
-cmake --build . --config Release
-cmake --install . --config Release
+cmake --build . --config MinSizeRel
+cmake --install . --config MinSizeRel
 
 echo "Output files...."
 find "$INSTALLPATH"
