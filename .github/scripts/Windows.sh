@@ -11,17 +11,17 @@ ARGS=( cmake .. -A "$CPU" -G "Visual Studio 17 2022" -DSDL_SHARED=ON -DSDL_STATI
 source "$BASEPATH/.github/scripts/Libraries/SDL.sh"
 cp "$INSTALLPATH/bin/SDL3.dll" "$OUTPUTS"
 
-# SDL Image
+# SDL_image
 ARGS=( cmake .. -A "$CPU" -G "Visual Studio 17 2022" -DBUILD_SHARED_LIBS=ON -DSDL3_DIR="$BASEPATH/SDL/install_output/cmake")
-source "$BASEPATH/.github/scripts/Libraries/SDL_Image.sh"
+source "$BASEPATH/.github/scripts/Libraries/SDL_image.sh"
 cp "$INSTALLPATH/bin/SDL3_image.dll" "$OUTPUTS"
 
-# SDL Mixer
+# SDL_mixer
 ARGS=( cmake .. -A "$CPU" -G "Visual Studio 17 2022" -DBUILD_SHARED_LIBS=ON -DSDL3_DIR="$BASEPATH/SDL/install_output/cmake")
-source "$BASEPATH/.github/scripts/Libraries/SDL_Mixer.sh"
+source "$BASEPATH/.github/scripts/Libraries/SDL_mixer.sh"
 cp "$INSTALLPATH/bin/SDL3_mixer.dll" "$OUTPUTS"
 
-# SDL Ttf
+# SDL_ttf
 ARGS=( cmake .. -A "$CPU" -G "Visual Studio 17 2022" -DBUILD_SHARED_LIBS=ON -DSDL3_DIR="$BASEPATH/SDL/install_output/cmake")
-source "$BASEPATH/.github/scripts/Libraries/SDL_Ttf.sh"
+source "$BASEPATH/.github/scripts/Libraries/SDL_ttf.sh"
 cp "$INSTALLPATH/bin/SDL3_ttf.dll" "$OUTPUTS"

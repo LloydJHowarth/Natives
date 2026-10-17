@@ -2,7 +2,7 @@
 set +e
 
 if [[ ! -d "$BASEPATH/SDL_ttf" ]]; then
-    git clone --recurse-submodules https://github.com/libsdl-org/SDL_image.git "$BASEPATH/SDL_ttf"
+    git clone --recurse-submodules https://github.com/libsdl-org/SDL_ttf.git "$BASEPATH/SDL_ttf"
 fi
 
 # Environment
