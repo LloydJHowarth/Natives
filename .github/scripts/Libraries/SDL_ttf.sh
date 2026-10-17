@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 set +e
 
+COMMIT="1abbd07aeda8da762d044dda6c247588e2ef9fc1"
+
 if [[ ! -d "$BASEPATH/SDL_ttf" ]]; then
-    git clone --recurse-submodules https://github.com/libsdl-org/SDL_ttf.git "$BASEPATH/SDL_ttf"
+    git clone --recurse-submodules https://github.com/libsdl-org/SDL_image.git "$BASEPATH/SDL_ttf"
+fi
+
+if [[ -n "$COMMIT" ]]; then
+    git -C "$BASEPATH/SDL_ttf" fetch origin
+    git -C "$BASEPATH/SDL_ttf" checkout "$COMMIT"
+    git -C "$BASEPATH/SDL_ttf" submodule update --init --recursive
 fi
 
 # Environment
