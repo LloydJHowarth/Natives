@@ -1,0 +1,15 @@
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.AssemblyInfoInputs.cache
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.AssemblyInfo.cs
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.csproj.CoreCompileInputs.cache
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.sourcelink.json
+C:\Dev\Natives\Source\bin\Debug\net10.0\Source.exe
+C:\Dev\Natives\Source\bin\Debug\net10.0\Source.deps.json
+C:\Dev\Natives\Source\bin\Debug\net10.0\Source.runtimeconfig.json
+C:\Dev\Natives\Source\bin\Debug\net10.0\Source.dll
+C:\Dev\Natives\Source\bin\Debug\net10.0\Source.pdb
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.dll
+C:\Dev\Natives\Source\obj\Debug\net10.0\refint\Source.dll
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.pdb
+C:\Dev\Natives\Source\obj\Debug\net10.0\Source.genruntimeconfig.cache
+C:\Dev\Natives\Source\obj\Debug\net10.0\ref\Source.dll

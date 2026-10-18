@@ -10,7 +10,6 @@ mkdir -p "$OUTPUTS"
 source "$BASEPATH/.github/scripts/Utility/Github.sh"
 Github "$BASEPATH/SDL" "https://github.com/libsdl-org/SDL.git" ""
 
-
 # Files
 FILES=(
   SDL_assert
