@@ -2,3 +2,7 @@
 	path = Source/Natives/Libraries
 	url = https://github.com/LloydJHowarth/Natives
 	branch = Libraries
+[submodule "Source/Natives/Bindings"]
+	path = Source/Natives/Bindings
+	url = https://github.com/LloydJHowarth/Natives
+	branch = Bindings
