@@ -6,25 +6,31 @@ Github()
     local NAME="$1"
     local URL="${2:-}"
     local COMMIT="${3:-}"
-    local TARGETDIRECTORY="$NAME"
 
-    if [ ! -d "$TARGETDIRECTORY" ]; then
-      
+    if [ ! -d "$NAME/.git" ]; then
+
         if [ -n "$URL" ]; then
-          
-            echo "$NAME $COMMIT [Downloading from $URL]"
-            git clone "$URL" "$TARGETDIRECTORY"
+
+            echo "$NAME ${COMMIT:-HEAD} [Downloading from $URL]"
+
+            mkdir -p "$(dirname "$NAME")" || return 1
+
+            git clone "$URL" "$NAME" || return 1
+
+            cd "$NAME" || return 1
 
             if [ -n "$COMMIT" ]; then
-                git checkout "$COMMIT"
+                git checkout "$COMMIT" || return 1
             fi
 
-            git submodule update --init --recursive
+            git submodule update --init --recursive || return 1
+
         else
-            echo "No valid url provided for $NAME"
+            echo "No valid url provided for $NAME" >&2
             return 1
         fi
+
     else
-        echo "$NAME $COMMIT [Already Installed]"
+        echo "$NAME ${COMMIT:-HEAD} [Already Installed]"
     fi
 }
