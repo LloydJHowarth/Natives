@@ -15,6 +15,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - { name: SDL_image, os: windows-2022, file: SDL_image.sh }
+          - { name: SDL_mixer, os: windows-2022, file: SDL_mixer.sh }
+          - { name: SDL_ttf, os: windows-2022, file: SDL_ttf.sh }
           - { name: SDL, os: windows-2022, file: SDL.sh }
     
     steps:
