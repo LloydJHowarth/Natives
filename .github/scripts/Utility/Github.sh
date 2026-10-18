@@ -1,19 +1,22 @@
-﻿Github()
+#!/usr/bin/env bash
+set +e
+
+Github()
 {
     local NAME="$1"
-    local REPO="${2:-}"
-    local VERSION="${3:-}"
+    local URL="${2:-}"
+    local COMMIT="${3:-}"
     local TARGETDIRECTORY="$NAME"
 
     if [ ! -d "$TARGETDIRECTORY" ]; then
       
-        if [ -n "$REPO" ]; then
+        if [ -n "$URL" ]; then
           
-            echo "$NAME $VERSION [Downloading from $REPO]"
-            git clone "$REPO" "$TARGETDIRECTORY"
+            echo "$NAME $COMMIT [Downloading from $URL]"
+            git clone "$URL" "$TARGETDIRECTORY"
 
-            if [ -n "$VERSION" ]; then
-                git checkout "$VERSION"
+            if [ -n "$COMMIT" ]; then
+                git checkout "$COMMIT"
             fi
 
             git submodule update --init --recursive
@@ -22,6 +25,6 @@
             return 1
         fi
     else
-        echo "$NAME $VERSION [Already Installed]"
+        echo "$NAME $COMMIT [Already Installed]"
     fi
 }
