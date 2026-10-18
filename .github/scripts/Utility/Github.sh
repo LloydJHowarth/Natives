@@ -1,7 +1,4 @@
-﻿#!/usr/bin/env bash
-set -e
-
-Github()
+﻿Github()
 {
     local NAME="$1"
     local REPO="${2:-}"
