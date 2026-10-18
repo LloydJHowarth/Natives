@@ -37,8 +37,3 @@ cp "$INSTALLPATH/lib/libSDL3_mixer.so" "$OUTPUTS"
 ARGS=( cmake .. -G "Ninja" -DBUILD_SHARED_LIBS=ON -DCMAKE_TOOLCHAIN_FILE="$ANDROID_NDK" -DANDROID_PLATFORM=android-$ANDROID_TARGET -DANDROID_ABI="$CPU" -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-z,max-page-size=16384" -DCMAKE_EXE_LINKER_FLAGS="-Wl,-z,max-page-size=16384" -DSDL3_DIR="$BASEPATH/SDL/install_output/lib/cmake/SDL3")
 source "$BASEPATH/.github/scripts/Libraries/SDL_ttf.sh"
 cp "$INSTALLPATH/lib/libSDL3_ttf.so" "$OUTPUTS"
-
-# SDL_activity
-ARGS=()
-source "$BASEPATH/.github/scripts/Libraries/SDL_activity.sh"
-cp "$INSTALLPATH/SDLActivity.jar" "$OUTPUTS"
