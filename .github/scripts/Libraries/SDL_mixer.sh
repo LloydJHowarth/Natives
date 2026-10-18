@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
 set +e
 
-COMMIT=""
-
-if [[ ! -d "$BASEPATH/SDL_mixer" ]]; then
-    git clone --recurse-submodules https://github.com/libsdl-org/SDL_mixer.git "$BASEPATH/SDL_mixer"
-fi
-
-if [[ -n "$COMMIT" ]]; then
-    git -C "$BASEPATH/SDL_mixer" fetch origin
-    git -C "$BASEPATH/SDL_mixer" checkout "$COMMIT"
-    git -C "$BASEPATH/SDL_mixer" submodule update --init --recursive
-fi
+# Github
+source "$BASEPATH/.github/scripts/Utility/Github.sh"
+Github "$BASEPATH/SDL_mixer" "https://github.com/libsdl-org/SDL_mixer.git" ""
 
 # Environment
 INSTALLPATH="$BASEPATH/SDL_mixer/install_output"

@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
 set +e
 
-COMMIT=""
-
-if [[ ! -d "$BASEPATH/SDL_image" ]]; then
-    git clone --recurse-submodules https://github.com/libsdl-org/SDL_image.git "$BASEPATH/SDL_image"
-fi
-
-if [[ -n "$COMMIT" ]]; then
-    git -C "$BASEPATH/SDL_image" fetch origin
-    git -C "$BASEPATH/SDL_image" checkout "$COMMIT"
-    git -C "$BASEPATH/SDL_image" submodule update --init --recursive
-fi
+# Github
+source "$BASEPATH/.github/scripts/Utility/Github.sh"
+Github "$BASEPATH/SDL_image" "https://github.com/libsdl-org/SDL_image.git" ""
 
 # Environment
 INSTALLPATH="$BASEPATH/SDL_image/install_output"

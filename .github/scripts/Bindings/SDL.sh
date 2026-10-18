@@ -6,11 +6,9 @@ BASEPATH="$(pwd)"
 OUTPUTS="$BASEPATH/outputs"
 mkdir -p "$OUTPUTS"
 
-
-# SDL
-if [ ! -d "$BASEPATH/SDL" ]; then
-    git clone --recurse-submodules https://github.com/libsdl-org/SDL.git "$BASEPATH/SDL"
-fi
+# Github
+source "$BASEPATH/.github/scripts/Utility/Github.sh"
+Github "$BASEPATH/SDL" "https://github.com/libsdl-org/SDL.git" ""
 
 
 # Files
